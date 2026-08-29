@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "war-of-ink",
+  "main": "src/index.js",
+  "compatibility_date": "2026-08-28",
+
+  // public/ 底下的檔案直接由邊緣節點提供，_headers 也放在那裡才會生效
+  "assets": {
+    "directory": "./public",
+    "binding": "ASSETS"
+  },
+
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ink-scores",
+      "database_id": "4da69e84-68fd-4840-a724-275287e82386"
+    }
+  ],
+
+  "observability": {
+    "enabled": true
+  }
+}
